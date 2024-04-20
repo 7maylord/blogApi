@@ -1,0 +1,27 @@
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"17-04-2024 07:40:17.981 PM"}
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"17-04-2024 07:44:19.342 PM"}
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"17-04-2024 07:50:06.957 PM"}
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"17-04-2024 07:51:39.274 PM"}
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"19-04-2024 10:09:33.989 AM"}
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"19-04-2024 11:06:13.407 AM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: blogapi.blogs index: title_1 dup key: { title: \"Oluwmides1ssd0 Blog validation\" }","timestamp":"19-04-2024 11:09:16.257 AM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: blogapi.blogs index: title_1 dup key: { title: \"Oluwmides1ssd0 Blog validation\" }","timestamp":"19-04-2024 11:09:44.869 AM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: blogapi.blogs index: title_1 dup key: { title: \"Oluwmides1ssd0 Blog validation\" }","timestamp":"19-04-2024 11:09:59.275 AM"}
+{"level":"error","message":"Unhandled Rejection: logger is not defined","timestamp":"19-04-2024 11:10:15.041 AM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: blogapi.blogs index: title_1 dup key: { title: \"Oluwmides1ssd0 Blog validation\" }","timestamp":"19-04-2024 11:10:36.504 AM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: blogapi.blogs index: title_1 dup key: { title: \"Oluwmides1ssd0 Blog validation\" }","timestamp":"19-04-2024 11:10:42.920 AM"}
+{"error":"Failed to save user","level":"error","message":"Registration failed","timestamp":"19-04-2024 01:40:24.515 PM"}
+{"error":"Failed to find user","level":"error","message":"Authentication Failed","timestamp":"19-04-2024 01:40:24.526 PM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: test.blogs index: title_1 dup key: { title: \"Test Blog\" }","timestamp":"19-04-2024 01:53:37.913 PM"}
+{"level":"error","message":"Error requesting blog by Id: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 01:53:37.941 PM"}
+{"level":"error","message":"Error updating blog: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 01:53:38.039 PM"}
+{"level":"error","message":"Error deleting blog: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 01:53:38.069 PM"}
+{"level":"error","message":"Error creating blog draft: E11000 duplicate key error collection: test.blogs index: title_1 dup key: { title: \"Test Blog\" }","timestamp":"19-04-2024 02:21:58.921 PM"}
+{"level":"error","message":"Error requesting blog by Id: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 02:21:58.954 PM"}
+{"level":"error","message":"Error updating blog: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 02:21:59.014 PM"}
+{"level":"error","message":"Error deleting blog: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 02:21:59.033 PM"}
+{"level":"error","message":"Error updating blog: Blog validation failed: body: Path `body` is required.","timestamp":"19-04-2024 09:21:02.238 PM"}
+{"level":"error","message":"Error requesting blog by Id: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 09:41:37.621 PM"}
+{"level":"error","message":"Error updating blog: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 09:41:37.670 PM"}
+{"level":"error","message":"Error deleting blog: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Blog\"","timestamp":"19-04-2024 09:41:37.687 PM"}
+{"level":"error","message":"Error requesting all authors blogs: Cast to ObjectId failed for value \"{ authorId: '6622224ab42b1d0933a09d66' }\" (type Object) at path \"_id\" for model \"Blog\"","timestamp":"20-04-2024 09:59:35.310 AM"}
