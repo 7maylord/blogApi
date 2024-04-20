@@ -18,13 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", userRoutes);
 app.use("/blogs", blogRoutes);
 
-// catch all route
-// app.all("*", (req, res) => {
-//   res.status(404);
-//   res.json({
-//     message: "Not found",
-//   });
-// });
 
 app.get("/logout", (req, res) => {
   res.clearCookie("jwt");
@@ -47,6 +40,14 @@ app.use((err, req, res, next) => {
   );
 // Handle errors and send a response
   res.status(err.status || 500).send(err.message || "Internal Server Error");
+});
+
+//catch all route
+app.all("*", (req, res) => {
+  res.status(404);
+  res.json({
+    message: "Not found",
+  });
 });
 
 module.exports = app;
