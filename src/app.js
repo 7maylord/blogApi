@@ -76,14 +76,6 @@ app.all("*", (req, res) => {
   });
 });
 
-//catch all route
-app.all("*", (req, res) => {
-  res.status(404);
-  res.json({
-    message: "Not found here",
-  });
-});
-
 //Later for views
 // app.all('*', (req, res) => {
 //   res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
