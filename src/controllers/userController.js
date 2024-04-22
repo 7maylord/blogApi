@@ -21,7 +21,7 @@ exports.getUserBlogs = async (req, res) => {
       .skip((page - 1) * limit)
       .limit(limit);
     logger.info('All authors blogs requested successfully');
-    res.status(200).json({ message: 'All authors blogs requested successfully', blogs });
+    res.status(200).json({ message: 'All authors blogs requested successfully', data: blogs });
   } catch (error) {
     logger.error(`Error requesting all authors blogs: ${error.message}`);
     res.status(500).json({ error: error.message });
@@ -42,13 +42,13 @@ exports.updateBlogState = async (req, res) => {
 
     // Check if the user is the owner of the blog
     if (blog.authorId.toString() !== userId) {
-      return res.status(403).json({ error: 'You are not authorized to update this blog' });
+      return res.status(403).json({ error: 'You are not authorized to update this blog state' });
     }
 
     blog.state = state;
     await blog.save();
     logger.info('Blog published successfully');
-    res.status(200).json({ message: 'Blog published successfully', blog });
+    res.status(200).json({ message: 'Blog published successfully', data: blog });
   } catch (error) {
     logger.error(`Error publishing blog: ${error.message}`);
     res.status(500).json({ error: error.message });

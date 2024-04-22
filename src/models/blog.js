@@ -7,8 +7,8 @@ const blogSchema = new mongoose.Schema({
   authorId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   state: { type: String, enum: ['draft', 'published'], default: 'draft' },
   readCount: { type: Number, default: 0 },
-  readingTime: Number,
-  tags: [String],
+  readingTime: { type: Number, default: 0 },
+  tags: [ {type: String} ],
   body: { type: String, required: true },
   timestamp: { type: Date, default: Date.now }
 });

@@ -27,7 +27,7 @@ exports.createBlog = async (req, res) => {
     });
     await blog.save();
     logger.info('Blog draft created successfully');
-    res.status(201).json({ message: 'Blog draft created successfully', blog });
+    res.status(201).json({ message: 'Blog draft created successfully', data: blog });
   } catch (error) {
     logger.error(`Error creating blog draft: ${error.message}`);
     res.status(500).json({ error: error.message });
@@ -41,14 +41,14 @@ exports.getBlogById = async (req, res) => {
     if (!blog) {
       return res.status(404).json({ error: 'Blog not found' });
     }
-    // Increment read count
+    // Increment for readCount
     blog.readCount += 1;
     await blog.save();
     logger.info('Blog requested successfully by Id');
-    res.status(200).json({ message: 'Blog requested successfully by Id', blog });
+    res.status(200).json({ message: 'Blog requested successfully by Id', data: blog });
   } catch (error) {
     logger.error(`Error requesting blog by Id: ${error.message}`);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ message: "Error requesting blog by Id", error: error.message });
   }
 };
 
@@ -80,8 +80,8 @@ exports.getBlogs = async (req, res) => {
         .sort(sortCriteria)
         .skip((page - 1) * limit)
         .limit(limit);
-      logger.info('All Blogs requested successfully');
-      res.status(200).json({ blogs });
+      logger.info('All Published Blogs requested successfully');
+      res.status(200).json({message: 'All Published Blogs requested successfully' , data: blogs });
     } catch (error) {
       logger.error(`Error requesting all blogs: ${error.message}`);
       res.status(500).json({ error: error.message });
@@ -97,13 +97,14 @@ exports.updateBlog = async (req, res) => {
     const userId = decodedToken.userId;
 
     const blog = await Blog.findById(blogId);
-    if (!blog) {
-      return res.status(404).json({ error: 'Blog not found' });
-    };
-
+    
     // Check if the user is the owner of the blog
     if (blog.authorId.toString() !== userId) {
-      return res.status(403).json({ error: 'You are not authorized to edit this blog' });
+      return res.status(404).json({ error: 'You are not authorized to edit this blog' });
+    };
+
+    if (!blog) {
+      return res.status(404).json({ error: 'Blog not found' });
     };
 
     // Update blog fields
@@ -113,7 +114,7 @@ exports.updateBlog = async (req, res) => {
     blog.body = body;
     await blog.save();
     logger.info('Blog updated successfully');
-    res.status(200).json({ message: 'Blog updated successfully', blog });
+    res.status(200).json({ message: 'Blog updated successfully', data: blog });
     
   } catch (error) {
     logger.error(`Error updating blog: ${error.message}`);

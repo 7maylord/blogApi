@@ -20,7 +20,7 @@ exports.verifyToken = (req, res, next) => {
   });
 };
 
-exports.signUp = async (req, res) => {
+exports.register = async (req, res) => {
   try {
     const { email, firstName, lastName, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -39,7 +39,7 @@ exports.signUp = async (req, res) => {
   }
 };
 
-exports.signIn = async (req, res) => {
+exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
@@ -52,7 +52,7 @@ exports.signIn = async (req, res) => {
     }
     const token = jwt.sign({ email: user.email, userId: user._id, firstName: user.firstName, lastName: user.lastName }, process.env.JWT_SECRET, { expiresIn: '1h' });
     logger.info({ message: "Login Successful", data: user });
-    res.status(200).json({ message: "Login Successful", token , data: user });
+    res.status(201).json({ message: "Login Successful", token , data: user });
   } catch (error) {
     logger.error({ message: "Authentication Failed", error: error.message })
     res.status(500).json({ message: "Authentication Failed", error: error.message });

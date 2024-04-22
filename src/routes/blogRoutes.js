@@ -6,7 +6,7 @@ const auth = require('../middleware/auth.js');
 router.post('/', auth.verifyToken, blogController.createBlog);
 router.get('/', blogController.getBlogs);
 router.get('/:blogId', blogController.getBlogById);
-router.put('/:blogId', auth.verifyToken, blogController.updateBlog);
+router.patch('/:blogId', auth.verifyToken, blogController.updateBlog);
 router.delete('/:blogId', auth.verifyToken, blogController.deleteBlog);
 
 module.exports = router;
