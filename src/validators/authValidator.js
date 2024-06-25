@@ -7,7 +7,8 @@ const signupValidation = async (req, res, next) => {
             email: joi.string().email().required(),
             firstName: joi.string().required(),
             lastName: joi.string().required(),
-            password: joi.string().pattern(new RegExp('^[a-zA-Z0-9@#]{3,30}$')).required(),
+            password: joi.string().pattern(new RegExp('^[a-zA-Z0-9@#]{6,30}$')).required(),
+            role: Joi.string().valid("USER", "ADMIN"),
             token: joi.array().items(joi.string().valid('x', 'y', 'z'))
         })
 

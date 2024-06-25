@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const blogController = require('../controllers/blogController');
 const auth = require('../middleware/auth.js');
+const redisClient = require('../integration/redis.js');
 
 router.post('/', auth.verifyToken, blogController.createBlog);
 router.get('/', blogController.getBlogs);
